@@ -81,9 +81,8 @@ public abstract class LinearLoader extends AbstractLibrarySupportLoader {
 		var reader = new BinaryReader(provider, true);
 		try {
 			checkFormat(reader);
-			loadSpecs.add(new LoadSpec(this, 0, new LanguageCompilerSpecPair("x86:LE:32:default", "borlandcpp"), true));
-			// Apparently there is no loader spec for watcom. It seems loader specs can be added under data/ though..
-			//loadSpecs.add(new LoadSpec(this, 0, new LanguageCompilerSpecPair("x86:LE:32:default", "watcom"), false));
+			loadSpecs.add(new LoadSpec(this, 0, new LanguageCompilerSpecPair("x86:LE:32:default", "default"), true));
+			loadSpecs.add(new LoadSpec(this, 0, new LanguageCompilerSpecPair("watcom:LE:32:default", "watcom"), false));
 		} catch (IOException e) {
 			Msg.error(this, String.format("IOException while parsing LxExecutable: %s", e.getMessage()));
 			e.printStackTrace();
