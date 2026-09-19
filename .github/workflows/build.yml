@@ -21,7 +21,7 @@ jobs:
         with:
           gradle-version: 'current'
           arguments: 'buildExtension'
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ghidra-lx-loader
           path: |
